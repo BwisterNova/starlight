@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import heroImg from "../../assets/hero-section.jpeg";
 import { Menu, Search, X } from "lucide-react";
 
+// Images
+import img1 from "../../assets/woman1.jpeg";
+import img2 from "../../assets/woman2.jpeg";
 export default function () {
   const [navOpen, setNavOpen] = useState(false);
 
@@ -10,10 +13,10 @@ export default function () {
   }
 
   return (
-    <div className="bg-slate-950 text-white">
+    <div className="bg-grey-50 text-white">
       {/* Hero wrapper with small margins on left/right and top */}
-      {/* <section className="relative overflow-hidden rounded-2xl shadow-2xl sm:mx-6 lg:mx-8 mt-4 mx-4"> */}
-      <section className="">
+      <section className="relative overflow-hidden rounded-2xl shadow-2xl sm:mx-6 lg:mx-8 mt-4 mx-4">
+        {/* <section className=""> */}
         {/* Background image layer */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -80,8 +83,54 @@ export default function () {
             </div>
           )}
 
-          {/* Hero Section */}
-          <section></section>
+          {/* Hero text content */}
+          <div className="flex justify-between items-center mt-12 gap-8 px-4 sm:px-6 lg:px-15">
+            <div className="block ">
+              <h1 className="font-bold font-sans text-5xl max-w-lg leading-tight w-60">
+                Elegance in Bloom
+              </h1>
+            </div>
+            <div className="block ">
+              <p className="text-sm pt-2 max-w-sm">
+                Shine brightly with starlight as you explore the gentle glow of
+                evening petals and the calm of a garden lit by moonbeams, where
+                every detail feels luminous and alive.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-40 px-4 sm:px-6 lg:px-15">
+            <div className="block max-w-2xl w-full tight leading-snug">
+              <button className="mr-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 cursor-pointer">
+                Shop Now
+              </button>
+              <button className="mr-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 cursor-pointer">
+                Discover Notes
+              </button>
+              <button className="mr-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 cursor-pointer">
+                Best Sellers
+              </button>
+              <button className="mr-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 cursor-pointer">
+                New Arrivals
+              </button>
+              <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20">
+                Fragrance Guide
+              </button>
+            </div>
+            {/* Small glass cars, with a single image below */}
+            <div className="mt-12 grid grid-cols-3 gap-4">
+              {/* Small glass card */}
+              <div className="rounded border border-white bg-white/10 p-4 shadow-lg backdrop-blur-lg">
+                <div>
+                  <h3></h3>
+                  <p></p>
+                </div>
+              </div>
+              {/* Small images */}
+              <div></div>
+              <div></div>
+            </div>
+          </div>
         </div>
       </section>
 
