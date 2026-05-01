@@ -5,7 +5,8 @@ import { Menu, Search, X } from "lucide-react";
 // Images
 import img1 from "../../assets/woman1.jpeg";
 import img2 from "../../assets/woman2.jpeg";
-export default function () {
+
+export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
 
   function toggleNav() {
@@ -13,10 +14,9 @@ export default function () {
   }
 
   return (
-    <div className="bg-grey-50 text-white">
+    <div className="bg-slate-950 text-white">
       {/* Hero wrapper with small margins on left/right and top */}
-      <section className="relative overflow-hidden rounded-2xl shadow-2xl sm:mx-6 lg:mx-8 mt-4 mx-4">
-        {/* <section className=""> */}
+      <section className="relative overflow-hidden rounded-b-2xl shadow-2xl">
         {/* Background image layer */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -28,16 +28,16 @@ export default function () {
 
         {/* Navigation */}
         <div className="relative z-10 px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
-          <header className="flex justify-between items-center border rounded-4xl border-white/20 bg-white/10 px-6 py-3 shadow-xl backdrop-blur-lg ">
+          <header className="flex flex-wrap items-center justify-between gap-4 rounded-4xl border border-white/20 bg-white/10 px-4 py-3 shadow-xl backdrop-blur-lg sm:px-6">
             {/* Logo */}
             <a href="#" className="text-lg font-semibold tracking-tight">
               *Logo
             </a>
 
-            {/* right  */}
+            {/* right */}
             <div className="flex items-center gap-3">
-              {/* Desktop nav items */}
-              <nav className="items-center gap-6 rounded-full bg-white/15 px-4 py-2 text-sm font-medium text-white shadow-md hidden md:flex">
+              {/* Desktop nav items only visible on md+ */}
+              <nav className="hidden items-center gap-6 rounded-full bg-white/15 px-4 py-2 text-sm font-medium text-white shadow-md md:flex">
                 <a href="/" className="transition hover:text-slate-100">
                   Home
                 </a>
@@ -49,7 +49,7 @@ export default function () {
               {/* Mobile Menu Button */}
               <button
                 type="button"
-                className="flex items-center border border-white/20 bg-white/10 px-3 py-2 rounded-full text-slate-100 shadow-md md:hidden cursor-pointer"
+                className="flex items-center justify-center rounded-full border border-white/20 bg-white/10 p-3 text-slate-100 shadow-md transition hover:bg-white/20 md:hidden"
                 onClick={toggleNav}
                 aria-expanded={navOpen}
                 aria-label="Toggle navigation menu"
@@ -57,26 +57,26 @@ export default function () {
                 {navOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
 
-              {/* Search Icon /Label */}
-              <div className="flex items-center rounded-full  border border-white/20 bg-white/10 px-3 py-2 text-slate-100 shadow-md cursor-pointer">
-                <Search className="md:mr-2" size={16} />
-                <span className="text-sm md:inline hidden">Search</span>
+              {/* Search Icon / Label */}
+              <div className="flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-2 text-slate-100 shadow-md cursor-pointer">
+                <Search className="mr-2" size={16} />
+                <span className="hidden text-sm md:inline">Search</span>
               </div>
             </div>
           </header>
 
-          {/* mobile menu */}
+          {/* Mobile menu panel */}
           {navOpen && (
-            <div className="mt-1 rounded-3xl  p-4   md:hidden">
+            <div className="mt-3 rounded-3xl border border-white/20 bg-slate-950/90 p-4 shadow-2xl backdrop-blur-xl md:hidden">
               <a
                 href="/"
-                className="block shadow-2xl border border-white/20 backdrop-blur-lg rounded-2xl px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+                className="block rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/20"
               >
                 Home
               </a>
               <a
                 href="#about"
-                className="mt-2 block shadow-2xl border border-white/20 backdrop-blur-lg rounded-2xl px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+                className="mt-2 block rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/20"
               >
                 About
               </a>
@@ -84,14 +84,17 @@ export default function () {
           )}
 
           {/* Hero text content */}
-          <div className="flex justify-between items-center mt-12 gap-8 px-4 sm:px-6 lg:px-15">
-            <div className="block ">
-              <h1 className="font-bold font-sans text-5xl max-w-lg leading-tight w-60">
+          <div className="mt-20 flex flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-5">
+            <div className="max-w-xl">
+              <h1
+                className="text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 Elegance in Bloom
               </h1>
             </div>
-            <div className="block ">
-              <p className="text-sm pt-2 max-w-sm">
+            <div className="max-w-xl text-sm leading-7 text-slate-200 sm:text-base">
+              <p>
                 Shine brightly with starlight as you explore the gentle glow of
                 evening petals and the calm of a garden lit by moonbeams, where
                 every detail feels luminous and alive.
@@ -99,36 +102,52 @@ export default function () {
             </div>
           </div>
 
-          <div className="mt-40 px-4 sm:px-6 lg:px-15">
-            <div className="block max-w-2xl w-full tight leading-snug">
-              <button className="mr-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 cursor-pointer">
-                Shop Now
-              </button>
-              <button className="mr-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 cursor-pointer">
-                Discover Notes
-              </button>
-              <button className="mr-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 cursor-pointer">
-                Best Sellers
-              </button>
-              <button className="mr-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 cursor-pointer">
-                New Arrivals
-              </button>
-              <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20">
-                Fragrance Guide
-              </button>
-            </div>
-            {/* Small glass cars, with a single image below */}
-            <div className="mt-12 grid grid-cols-3 gap-4">
-              {/* Small glass card */}
-              <div className="rounded border border-white bg-white/10 p-4 shadow-lg backdrop-blur-lg">
-                <div>
-                  <h3></h3>
-                  <p></p>
+          {/* Buttons and cards section */}
+          <div className="mt-21 px-4 sm:px-6 lg:px-5">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+              <div className="flex flex-wrap gap-3">
+                <button className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/20">
+                  Shop Now
+                </button>
+                <button className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/20">
+                  Discover Notes
+                </button>
+                <button className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/20">
+                  Best Sellers
+                </button>
+                <button className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/20">
+                  New Arrivals
+                </button>
+                <button className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/20">
+                  Fragrance Guide
+                </button>
+              </div>
+
+              {/* Small glass card + images */}
+              <div className="grid w-full gap-4 sm:grid-cols-3">
+                <div className="rounded-3xl border border-white/10 bg-white/10 p-4 shadow-lg backdrop-blur-lg">
+                  <h3 className="font-semibold text-lg text-white">
+                    Signature Collection
+                  </h3>
+                  <p className="mt-1 text-xs text-white/80">
+                    Timeless fragrances that shine
+                  </p>
+                </div>
+                <div className="overflow-hidden rounded-3xl">
+                  <img
+                    src={img1}
+                    alt="Image 1"
+                    className="h-48 w-full object-cover"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-3xl">
+                  <img
+                    src={img2}
+                    alt="Image 2"
+                    className="h-48 w-full object-cover"
+                  />
                 </div>
               </div>
-              {/* Small images */}
-              <div></div>
-              <div></div>
             </div>
           </div>
         </div>
