@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import heroImg from "../../assets/hero-section.jpeg";
-import { Menu, Search, X } from "lucide-react";
+import { Menu, Search, SquareStar, Star, X } from "lucide-react";
 
 // Images
 import img1 from "../../assets/woman1.jpeg";
 import img2 from "../../assets/woman2.jpeg";
+import img3 from "../../assets/yellowPerfume.jpeg";
+import img4 from "../../assets/elegantPerfume.jpeg";
 
 export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
@@ -14,9 +16,9 @@ export default function Home() {
   }
 
   return (
-    <div className="bg-grey-100 text-white">
+    <div className="bg-stone-100 ">
       {/* Hero wrapper with small margins on left/right and top */}
-      <section className="relative overflow-hidden rounded-b-2xl shadow-2xl">
+      <section className="relative overflow-hidden  shadow-lg">
         {/* Background image layer */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -30,7 +32,10 @@ export default function Home() {
         <div className="relative z-10 px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
           <header className="relative flex flex-wrap items-center justify-between gap-4 rounded-4xl border border-white/20 bg-white/10 px-4 py-3 shadow-xl backdrop-blur-lg sm:px-6">
             {/* Logo */}
-            <a href="#" className="text-lg font-semibold tracking-tight">
+            <a
+              href="#"
+              className="text-lg font-semibold tracking-tight text-white"
+            >
               *Logo
             </a>
 
@@ -163,7 +168,63 @@ export default function Home() {
       {/* Main Content */}
       <main>
         {/* Features Section */}
-        <section></section>
+        <section>
+          <div className="flex justify-between px-8 py-8 lg:px-16 lg:py-16  ">
+            <div className="">
+              <h1 className="text-3xl font-semibold">
+                <span className="block">Here is More</span>
+                <span className="block max-w-md text-gray-500">
+                  Details for you
+                </span>
+              </h1>
+            </div>
+            <div className="flex items-center gap-4">
+              <button className="flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium border border-black/20 bg-transparent hover:bg-white/20 hover:text-gray-900">
+                <span className="h-1 w-1 bg-red-500 rounded-full"></span>About
+                Us
+              </button>
+            </div>
+          </div>
+
+          <div className="px-8 flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between lg:px-16 ">
+            {/* The card */}
+            <div className="rounded-2xl bg-white shadow-xl px-4 py-6 lg:px-8 lg:py-12">
+              <div className="flex justify-between">
+                <span className="rounded-full bg-yellow-100 px-2 py-1 text-xs font-semibold text-yellow-800 inline-flex items-center gap-1 mb-2">
+                  <Star className="text-yellow-400" />
+                </span>
+              </div>
+              <div>
+                <img
+                  src={img3}
+                  alt="yellow golden perfume"
+                  className="rounded-2xl shadow-lg"
+                />
+              </div>
+            </div>
+
+            {/* Center Image */}
+            <div className="flex justify-center">
+              <img
+                src={img4}
+                alt="another perfume"
+                className="h-80 w-48 object-cover shadow-xl rounded-2xl"
+              />
+            </div>
+
+            {/* Description */}
+            <div className="rounded-2xl bg-white shadow-xl px-4 py-6 lg:px-8 lg:py-12">
+              <h1 className="text-2xl font-semibold">About Starlight</h1>
+              <p className="mt-2">
+                Starlight is a fragrance that captures the essence of elegance
+                and bloom, a pleasant scent that shines brightly like evening
+                petals under moonbeams, where every note feels luminous and
+                alive. A fragrance is a smell, usually a pleasant or sweet
+                smell.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
