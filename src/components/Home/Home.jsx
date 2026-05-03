@@ -168,10 +168,10 @@ export default function Home() {
       {/* Main Content */}
       <main>
         {/* Features Section */}
-        <section>
-          <div className="flex justify-between px-8 py-8 lg:px-16 lg:py-16  ">
-            <div className="">
-              <h1 className="text-3xl font-semibold">
+        <section id="about" className="mt-6 lg:mt-4">
+          <div className="flex justify-between px-8 py-8 lg:px-16 lg:py-10   ">
+            <div>
+              <h1 className="lg:text-3xl font-semibold text-2xl">
                 <span className="block">Here is More</span>
                 <span className="block max-w-md text-gray-500">
                   Details for you
@@ -186,15 +186,26 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="px-8 flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between lg:px-16 ">
-            {/* The card */}
-            <div className="rounded-2xl bg-white shadow-xl px-4 py-6 lg:px-8 lg:py-12">
-              <div className="flex justify-between">
-                <span className="rounded-full bg-yellow-100 px-2 py-1 text-xs font-semibold text-yellow-800 inline-flex items-center gap-1 mb-2">
+          <div className="px-8 flex flex-col lg:flex-row gap-8 lg:items-start justify-center lg:px-16">
+            {/* The card - hidden on mobile, shown on lg+ */}
+            <div className="hidden lg:block rounded-4xl bg-white shadow-2xl px-4 py-3 lg:px-4 lg:py-6 max-w-xs max-h-96">
+              <div className="flex justify-between gap-8 items-start mb-4">
+                <div className="bg-yellow-50 p-2 rounded-full border border-amber-200">
                   <Star className="text-yellow-400" />
-                </span>
+                </div>
+
+                <div className="max-w-sm text-sm text-gray-700">
+                  <p>
+                    A fragrance that captures the essence of elegance and bloom,
+                    <span className="text-gray-500">
+                      a pleasant scent that shines brightly like evening petals
+                      under moonbeams, where every note feels luminous and
+                      alive.
+                    </span>
+                  </p>
+                </div>
               </div>
-              <div>
+              <div className="overflow-hidden rounded-2xl">
                 <img
                   src={img3}
                   alt="yellow golden perfume"
@@ -203,25 +214,57 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Center Image */}
-            <div className="flex justify-center">
-              <img
-                src={img4}
-                alt="another perfume"
-                className="h-80 w-48 object-cover shadow-xl rounded-2xl"
-              />
+            {/* Center and Description container - flex row on lg+, column on mobile */}
+            <div className="flex flex-col lg:flex-row gap-8 flex-1 ">
+              {/* Center Image - allowed to expand */}
+              <div className="flex justify-center flex-1 lg:min-h-96 sm:min-h-0 overflow-hidden rounded-4xl shadow-2xl">
+                <img
+                  src={img4}
+                  alt="another perfume"
+                  className="w-full h-full object-cover shadow-xl rounded-2xl"
+                />
+              </div>
+
+              {/* Description - at top on lg+, below image on mobile */}
+              <div className="px-1  lg:px-8 lg:py-0 max-w-xs lg:pt-0">
+                <h1 className="text-4xl font-semibold">
+                  <span className="block">About</span> Starlight
+                </h1>
+                <p className="mt-2 text-sm text-gray-700">
+                  Starlight is a fragrance that captures the essence of elegance
+                  and bloom, a pleasant scent that shines brightly like evening
+                  petals under moonbeams, where every note feels luminous and
+                  alive. A fragrance is a smell, usually a pleasant or sweet
+                  smell.
+                </p>
+              </div>
             </div>
 
-            {/* Description */}
-            <div className="rounded-2xl bg-white shadow-xl px-4 py-6 lg:px-8 lg:py-12">
-              <h1 className="text-2xl font-semibold">About Starlight</h1>
-              <p className="mt-2">
-                Starlight is a fragrance that captures the essence of elegance
-                and bloom, a pleasant scent that shines brightly like evening
-                petals under moonbeams, where every note feels luminous and
-                alive. A fragrance is a smell, usually a pleasant or sweet
-                smell.
-              </p>
+            {/* The card - shown on mobile, hidden on lg+ */}
+            <div className="lg:hidden rounded-4xl bg-white shadow-2xl px-4 py-3 max-w-xs max-h-96 w-full">
+              <div className="flex justify-between gap-8 items-start mb-4">
+                <div className="bg-yellow-50 p-2 rounded-full border border-amber-200">
+                  <Star className="text-yellow-400" />
+                </div>
+
+                <div className="max-w-sm text-sm text-gray-700">
+                  <p>
+                    A fragrance that captures the essence of elegance and bloom,
+                    <span className="text-gray-500">
+                      a pleasant scent that shines brightly like evening petals
+                      under moonbeams, where every note feels luminous and
+                      alive.
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div className="overflow-hidden rounded-2xl">
+                <img
+                  src={img3}
+                  alt="yellow golden perfume"
+                  className="rounded-2xl shadow-lg"
+                />
+              </div>
             </div>
           </div>
         </section>
