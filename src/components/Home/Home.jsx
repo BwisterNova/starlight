@@ -186,7 +186,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="px-8 flex flex-col lg:flex-row gap-8 lg:items-start justify-center lg:px-16">
+          {/* Content Container */}
+          {/* Responsive content container: row on desktop, column only below 600px */}
+          <div className="px-8 flex flex-row max-[600px]:flex-col max-[600px]:items-center lg:flex-row gap-8 lg:items-start justify-center lg:px-16">
             {/* The card - hidden on mobile, shown on lg+ */}
             <div className="hidden lg:block rounded-4xl bg-white shadow-2xl px-4 py-3 lg:px-4 lg:py-6 max-w-xs max-h-96">
               <div className="flex justify-between gap-8 items-start mb-4">
