@@ -8,12 +8,58 @@ import img2 from "../../assets/woman2.jpeg";
 import img3 from "../../assets/yellowPerfume.jpeg";
 import img4 from "../../assets/elegantPerfume.jpeg";
 
+// Card image imports
+import cardImg1 from "../../assets/crystalPef.jpeg";
+import cardImg2 from "../../assets/crystalPerf.jpeg";
+import cardImg3 from "../../assets/goldBottlePerf.jpeg";
+import cardImg4 from "../../assets/luxaryPerf.jpeg";
+
 export default function Home() {
   const [navOpen, setNavOpen] = useState(false);
 
   function toggleNav() {
     setNavOpen((prev) => !prev);
   }
+
+  // object of array for the products cards
+  const products = [
+    {
+      id: 1,
+      name: "Starlight Signature Eau de Parfum",
+      description:
+        "A timeless fragrance that shines with elegance and grace, capturing the essence of sophistication and allure in every note.",
+      image: cardImg1,
+      price: "$120",
+      discount: "40% off",
+    },
+    {
+      id: 2,
+      name: "Crystal Eau de Parfum",
+      description:
+        "A mesmerizing fragrance that embodies the clarity and brilliance of crystal, creating an unforgettable sensory experience.",
+      image: cardImg2,
+      price: "$150",
+      discount: "30% off",
+    },
+    {
+      id: 3,
+      name: "Golden Bottle Eau de Parfum",
+      description:
+        "An opulent fragrance that captures the luxury and sophistication of a golden bottle, perfect for those who appreciate the finer things in life.",
+      image: cardImg3,
+      price: "$200",
+      discount: "25% off",
+    },
+    {
+      id: 4,
+      name: "Luxury Eau de Parfum",
+      description:
+        "A premium fragrance that exudes elegance and refinement, designed for the discerning individual who values quality and uniqueness.",
+      image: cardImg4,
+      price: "$250",
+      discount: "20% off",
+    },
+  ];
 
   return (
     <div className="bg-stone-100 ">
@@ -268,6 +314,66 @@ export default function Home() {
                 />
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Products Section container */}
+        <section className="bg-zinc-950 mt-6 lg:mt-8 px-8 py-8 lg:px-16 lg:py-10 rounded-4xl">
+          <div className="mb-8 lg:mb-12 text-center">
+            <h1 className="text-4xl font-bold text-white ">
+              Premier Selection
+            </h1>
+            <p className="text-gray-400 mt-2 max-w-md mx-auto">
+              Each sent is crafted for you to lead with confidence, power and
+              confidence.
+            </p>
+          </div>
+          {/* Responsive grid: 1 column on mobile, 2 on sm, 4 on lg+ */}
+          <div className=" py-8 lg:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="rounded-3xl text-white shadow-lg overflow-hidden relative h-96 flex flex-col"
+                style={{
+                  backgroundImage: `url(${product.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90"></div>
+
+                <div className="absolute top-3 left-4">
+                  <span className="bg-white/20 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
+                    {product.discount}
+                  </span>
+                </div>
+
+                <div className="relative mt-auto p-6 flex flex-col gap-3">
+                  <h3 className="text-lg font-semibold">{product.name}</h3>
+                  <p className="text-gray-300 text-sm">{product.description}</p>
+
+                  <div className="flex justify-between items-center mt-4">
+                    <span className="text-2xl font-bold">{product.price}</span>
+                    <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-full flex items-center gap-2 transition-all">
+                      <span className="text-sm font-semibold">Shop</span>
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
       </main>
