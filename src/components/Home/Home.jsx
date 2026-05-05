@@ -7,6 +7,7 @@ import img1 from "../../assets/woman1.jpeg";
 import img2 from "../../assets/woman2.jpeg";
 import img3 from "../../assets/yellowPerfume.jpeg";
 import img4 from "../../assets/elegantPerfume.jpeg";
+import img5 from "../../assets/perfumeMirror.jpeg";
 
 // Card image imports
 import cardImg1 from "../../assets/crystalPef.jpeg";
@@ -318,7 +319,7 @@ export default function Home() {
         </section>
 
         {/* Products Section container */}
-        <section className="bg-zinc-950 mt-6 lg:mt-8 px-8 py-8 lg:px-16 lg:py-10 rounded-4xl">
+        <section className="bg-zinc-950 mt-6 lg:mt-8 px-8 py-8 lg:px-16 lg:py-10 ">
           <div className="mb-8 lg:mb-8 text-center">
             <h1 className="text-4xl font-bold text-white ">
               Premier Selection
@@ -367,8 +368,40 @@ export default function Home() {
         </section>
 
         {/* list of benefits with img */}
-        <section>
-          <div></div>
+        <section className="px-8 py-8 lg:px-16 lg:py-10">
+          <div className="bg-neutral-100 shadow-2xl rounded-3xl p-6 lg:p-10 flex flex-col ">
+            <div className="mb-6">
+              <h1 className="block text-2xl font-bold text-gray-800 lg:text-3xl">
+                Fragrance Benefits
+              </h1>
+              <p className="block text-gray-600 mt-2 max-w-md text-sm">
+                Discover the unique advantages of our signature fragrances.
+              </p>
+            </div>
+            <div className="flex flex-row">
+              <img src={img5} alt="Fragrance Benefits" />
+              <div>
+                <ul>
+                  <li>
+                    <strong>Long-lasting scent:</strong> Our fragrances are
+                    designed to last all day, keeping you smelling fresh and
+                    confident from morning to night.
+                  </li>
+                  <li>
+                    <strong>Unique blends:</strong> Each fragrance is crafted
+                    with a unique blend of high-quality ingredients, ensuring a
+                    distinctive and memorable scent.
+                  </li>
+                  <li>
+                    <strong>Versatile for any occasion:</strong> Whether you're
+                    heading to work, going out for a special event, or just want
+                    to feel good every day, our fragrances are perfect for any
+                    occasion.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
     </div>
