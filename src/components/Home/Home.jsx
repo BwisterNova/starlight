@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import heroImg from "../../assets/hero-section.jpeg";
-import { Menu, Search, SquareStar, Star, X } from "lucide-react";
+import { ArrowRight, Menu, Search, SquareStar, Star, X } from "lucide-react";
 
 // Images
 import img1 from "../../assets/woman1.jpeg";
@@ -319,7 +319,7 @@ export default function Home() {
 
         {/* Products Section container */}
         <section className="bg-zinc-950 mt-6 lg:mt-8 px-8 py-8 lg:px-16 lg:py-10 rounded-4xl">
-          <div className="mb-8 lg:mb-12 text-center">
+          <div className="mb-8 lg:mb-8 text-center">
             <h1 className="text-4xl font-bold text-white ">
               Premier Selection
             </h1>
@@ -329,6 +329,7 @@ export default function Home() {
             </p>
           </div>
           {/* Responsive grid: 1 column on mobile, 2 on sm, 4 on lg+ */}
+          {/* Reminder: clickable favourite icon to add */}
           <div className=" py-8 lg:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {products.map((product) => (
               <div
@@ -340,7 +341,7 @@ export default function Home() {
                   backgroundPosition: "center",
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90"></div>
+                <div className="absolute inset-x-0 bottom-0 h-1/1 bg-gradient-to-t from-black/95 to-transparent"></div>
 
                 <div className="absolute top-3 left-4">
                   <span className="bg-white/20 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/30">
@@ -354,27 +355,20 @@ export default function Home() {
 
                   <div className="flex justify-between items-center mt-4">
                     <span className="text-2xl font-bold">{product.price}</span>
-                    <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-full flex items-center gap-2 transition-all">
-                      <span className="text-sm font-semibold">Shop</span>
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                    <button className="cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-full flex items-center gap-2 transition-all">
+                      {/* <span className="text-sm font-semibold">Shop</span> */}
+                      <ArrowRight size={16} />
                     </button>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+        </section>
+
+        {/* list of benefits with img */}
+        <section>
+          <div></div>
         </section>
       </main>
     </div>
