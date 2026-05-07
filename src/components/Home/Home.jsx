@@ -368,7 +368,7 @@ export default function Home() {
         </section>
 
         {/* list of benefits with img */}
-        <section className="px-8 py-8 lg:px-16 lg:py-10">
+        <section className="px-6 py-8 lg:px-16 lg:py-10">
           <div className="bg-neutral-100 shadow-2xl rounded-3xl p-6 lg:p-10 flex flex-col ">
             <div className="mb-6">
               <h1 className="block text-2xl font-bold text-gray-800 lg:text-4xl">
