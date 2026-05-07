@@ -427,6 +427,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Testimonials */}
+        <section></section>
       </main>
     </div>
   );
