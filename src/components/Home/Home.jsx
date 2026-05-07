@@ -7,7 +7,7 @@ import img1 from "../../assets/woman1.jpeg";
 import img2 from "../../assets/woman2.jpeg";
 import img3 from "../../assets/yellowPerfume.jpeg";
 import img4 from "../../assets/elegantPerfume.jpeg";
-import img5 from "../../assets/perfumeMirror.jpeg";
+import img5 from "../../assets/fruityPerf.jpeg";
 
 // Card image imports
 import cardImg1 from "../../assets/crystalPef.jpeg";
@@ -371,32 +371,56 @@ export default function Home() {
         <section className="px-8 py-8 lg:px-16 lg:py-10">
           <div className="bg-neutral-100 shadow-2xl rounded-3xl p-6 lg:p-10 flex flex-col ">
             <div className="mb-6">
-              <h1 className="block text-2xl font-bold text-gray-800 lg:text-3xl">
+              <h1 className="block text-2xl font-bold text-gray-800 lg:text-4xl">
                 Fragrance Benefits
               </h1>
               <p className="block text-gray-600 mt-2 max-w-md text-sm">
                 Discover the unique advantages of our signature fragrances.
               </p>
             </div>
-            <div className="flex flex-row">
-              <img src={img5} alt="Fragrance Benefits" />
-              <div>
-                <ul>
-                  <li>
-                    <strong>Long-lasting scent:</strong> Our fragrances are
-                    designed to last all day, keeping you smelling fresh and
-                    confident from morning to night.
+            <div className="flex flex-row gap-8 max-[1024px]:flex-col  ">
+              <div className="w-full lg:max-w-lg rounded-2xl overflow-hidden shadow-lg h-80 lg:h-auto">
+                <img
+                  src={img5}
+                  alt="Fragrance Benefits"
+                  className="w-full lg:h-full h-80 object-cover"
+                />
+              </div>
+              <div className=" text-gray-700 flex-1">
+                <ul className="space-y-4">
+                  <li className="flex flex-col gap-1">
+                    <strong className="text-gray-800">
+                      Long-lasting scent:
+                    </strong>
+                    <span className="text-sm">
+                      Our fragrances are designed to last all day, keeping you
+                      smelling fresh and confident from morning to night.
+                    </span>
                   </li>
-                  <li>
-                    <strong>Unique blends:</strong> Each fragrance is crafted
-                    with a unique blend of high-quality ingredients, ensuring a
-                    distinctive and memorable scent.
+                  <li className="flex flex-col gap-1">
+                    <strong className="text-gray-800">Unique blends:</strong>
+                    <span className="text-sm">
+                      Each fragrance is crafted with a unique blend of
+                      high-quality ingredients, ensuring a distinctive and
+                      memorable scent.
+                    </span>
                   </li>
-                  <li>
-                    <strong>Versatile for any occasion:</strong> Whether you're
-                    heading to work, going out for a special event, or just want
-                    to feel good every day, our fragrances are perfect for any
-                    occasion.
+                  <li className="flex flex-col gap-1">
+                    <strong className="text-gray-800">
+                      Versatile for any occasion:
+                    </strong>
+                    <span className="text-sm">
+                      Whether you're heading to work, going out for a special
+                      event, or just want to feel good every day, our fragrances
+                      are perfect for any occasion.
+                    </span>
+                  </li>
+                  <li className="flex flex-col gap-1">
+                    <strong className="text-gray-800">Eco-friendly:</strong>
+                    <span className="text-sm">
+                      We are committed to using sustainable and environmentally
+                      responsible practices in the production of our fragrances.
+                    </span>
                   </li>
                 </ul>
               </div>
