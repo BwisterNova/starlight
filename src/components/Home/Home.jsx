@@ -62,6 +62,37 @@ export default function Home() {
     },
   ];
 
+  // object of array for 3 testimonials cards with img, name, title and quote
+  const testimonials = [
+    {
+      id: 1,
+      name: "Jane Miller",
+      title: "Verified Buyer",
+      quote:
+        "This fragrance is absolutely divine, it has become my signature scent it lasts all day and makes me feel confident and elegant every time i wear it.",
+      image: img1,
+      star: 5,
+    },
+    {
+      id: 2,
+      name: "Isabella Smith",
+      title: "Verified Buyer",
+      quote:
+        "I've tried many perfumes, but this one stands out for its longevity and elegance.",
+      image: img2,
+      star: 4,
+    },
+    {
+      id: 3,
+      name: "Emily Johnson",
+      title: "Verified Buyer",
+      quote:
+        "Elegant, timeless and beautifully craftes. This has become my signature scent for every special occasion.",
+      image: img3,
+      star: 5,
+    },
+  ];
+
   return (
     <div className="bg-stone-100 ">
       {/* Hero wrapper with small margins on left/right and top */}
@@ -429,7 +460,19 @@ export default function Home() {
         </section>
 
         {/* Testimonials */}
-        <section></section>
+        <section className="bg-zinc-950 mt-6 lg:mt-8 px-8 py-8 lg:px-16 lg:py-10 ">
+          <div className="mb-8 lg:mb-8">
+            <div className="text-center text-white">
+              <h1 className="text-4xl font-bold">
+                Loved by <span className="text-amber-700">our customers</span>
+              </h1>
+              <p>
+                Real stories from real people who have fallen in love with our
+                signature fragrances.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
