@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import heroImg from "../../assets/hero-section.jpeg";
-import { ArrowRight, Menu, Search, SquareStar, Star, X } from "lucide-react";
+import {
+  ArrowRight,
+  Menu,
+  Quote,
+  Search,
+  SquareStar,
+  Star,
+  X,
+} from "lucide-react";
 
 // Images
 import img1 from "../../assets/woman1.jpeg";
@@ -8,6 +16,9 @@ import img2 from "../../assets/woman2.jpeg";
 import img3 from "../../assets/yellowPerfume.jpeg";
 import img4 from "../../assets/elegantPerfume.jpeg";
 import img5 from "../../assets/fruityPerf.jpeg";
+import img6 from "../../assets/man.jpeg";
+import img7 from "../../assets/cuteLady.jpeg";
+import img8 from "../../assets/blonde.jpeg";
 
 // Card image imports
 import cardImg1 from "../../assets/crystalPef.jpeg";
@@ -67,29 +78,29 @@ export default function Home() {
     {
       id: 1,
       name: "Jane Miller",
-      title: "Verified Buyer",
       quote:
         "This fragrance is absolutely divine, it has become my signature scent it lasts all day and makes me feel confident and elegant every time i wear it.",
-      image: img1,
+      image: img6,
       star: 5,
+      role: "Verified Buyer",
     },
     {
       id: 2,
       name: "Isabella Smith",
-      title: "Verified Buyer",
       quote:
         "I've tried many perfumes, but this one stands out for its longevity and elegance.",
-      image: img2,
+      image: img7,
       star: 4,
+      role: "Verified Buyer",
     },
     {
       id: 3,
       name: "Emily Johnson",
-      title: "Verified Buyer",
       quote:
         "Elegant, timeless and beautifully craftes. This has become my signature scent for every special occasion.",
-      image: img3,
+      image: img8,
       star: 5,
+      role: "Verified Buyer",
     },
   ];
 
@@ -268,7 +279,7 @@ export default function Home() {
           {/* Responsive content container: row on desktop, column only below 600px */}
           <div className="px-8 flex flex-row max-[600px]:flex-col max-[600px]:items-center lg:flex-row gap-8 lg:items-start justify-center lg:px-16">
             {/* The card - hidden on mobile, shown on lg+ */}
-            <div className="hidden lg:block rounded-4xl bg-white shadow-2xl px-4 py-3 lg:px-4 lg:py-6 max-w-xs max-h-96">
+            <div className="hidden lg:block rounded-4xl bg-white shadow-2xl px-4 py-3 lg:px-4 lg:py-6 max-w-xs max-h-96 border border-amber-200">
               <div className="flex justify-between gap-8 items-start mb-4">
                 <div className="bg-yellow-50 p-2 rounded-full border border-amber-200">
                   <Star className="text-yellow-400" />
@@ -400,7 +411,7 @@ export default function Home() {
 
         {/* list of benefits with img */}
         <section className="px-6 py-8 lg:px-16 lg:py-10">
-          <div className="bg-neutral-100 shadow-2xl rounded-3xl p-6 lg:p-10 flex flex-col ">
+          <div className="bg-neutral-100 shadow-2xl rounded-3xl p-6 lg:p-10 flex flex-col border border-amber-200">
             <div className="mb-6">
               <h1 className="block text-2xl font-bold text-gray-800 lg:text-4xl">
                 Fragrance Benefits
@@ -414,7 +425,7 @@ export default function Home() {
                 <img
                   src={img5}
                   alt="Fragrance Benefits"
-                  className="w-full lg:h-full h-80 object-cover"
+                  className="w-full lg:h-full h-80 object-cover border border-amber-200 rounded-2xl shadow-lg"
                 />
               </div>
               <div className=" text-gray-700 flex-1">
@@ -460,16 +471,66 @@ export default function Home() {
         </section>
 
         {/* Testimonials */}
-        <section className="bg-zinc-950 mt-6 lg:mt-8 px-8 py-8 lg:px-16 lg:py-10 ">
+        <section className="bg-gray-200 mt-6 lg:mt-8 px-8 py-8 lg:px-16 lg:py-10 ">
           <div className="mb-8 lg:mb-8">
-            <div className="text-center text-white">
+            <div className="text-center max-w-lg mx-auto">
               <h1 className="text-4xl font-bold">
                 Loved by <span className="text-amber-700">our customers</span>
               </h1>
-              <p>
+              <p className="max-w-md mx-auto mt-2 text-gray-600 text-sm">
                 Real stories from real people who have fallen in love with our
                 signature fragrances.
               </p>
+            </div>
+
+            <div className="mt-10">
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {testimonials.map((testimonial) => (
+                  <div
+                    key={testimonial.id}
+                    className="bg-white p-6 rounded-2xl shadow-lg border border-amber-200 hover:shadow-xl transition-all duration-200"
+                  >
+                    <div className="flex flex-col items-center text-center justify-center gap-2">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-40 h-40 rounded-full object-cover mx-auto mb-2 border-2 border-amber-200"
+                      />
+
+                      <Quote className="text-amber-500 mb-4" size={24} />
+
+                      <p className="text-gray-600 italic text-sm">
+                        "{testimonial.quote}"
+                      </p>
+
+                      <hr className="w-full h-0.5 border-0 bg-amber-600 mx-auto my-2" />
+
+                      <p className="font-bold text-gray-800">
+                        {testimonial.name}
+                      </p>
+
+                      <p className="text-sm text-gray-500">
+                        {testimonial.role}
+                      </p>
+
+                      {testimonial.role
+                        ?.toLowerCase()
+                        .includes("verified buyer") && (
+                        <div className="mt-2 flex items-center justify-center gap-1">
+                          {[...Array(5)].map((_, index) => (
+                            <span
+                              key={index}
+                              className="text-amber-500 text-sm"
+                            >
+                              ★
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -477,3 +538,22 @@ export default function Home() {
     </div>
   );
 }
+
+//  <p className="text-gray-600 italic">
+//                       "{testimonial.quote}"
+//                     </p>
+//                     <div className="mt-4 flex items-center">
+//                       <img
+//                         src={testimonial.image}
+//                         alt={testimonial.name}
+//                         className="w-12 h-12 rounded-full object-cover"
+//                       />
+//                       <div className="ml-4">
+//                         <h3 className="font-bold text-gray-800">
+//                           {testimonial.name}
+//                         </h3>
+//                         <p className="text-sm text-gray-500">
+//                           {testimonial.role}
+//                         </p>
+//                       </div>
+//                     </div>
