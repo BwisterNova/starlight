@@ -19,6 +19,8 @@ import img5 from "../../assets/fruityPerf.jpeg";
 import img6 from "../../assets/man.jpeg";
 import img7 from "../../assets/cuteLady.jpeg";
 import img8 from "../../assets/blonde.jpeg";
+import img9 from "../../assets/bottleGolden.jpeg";
+import img10 from "../../assets/perfumeMirror.jpeg";
 
 // Card image imports
 import cardImg1 from "../../assets/crystalPef.jpeg";
@@ -238,14 +240,14 @@ export default function Home() {
                   <img
                     src={img1}
                     alt="Image 1"
-                    className="h-48 w-full object-cover"
+                    className="h-full w-full object-cover"
                   />
                 </div>
                 <div className="hidden overflow-hidden rounded-3xl sm:block">
                   <img
                     src={img2}
                     alt="Image 2"
-                    className="h-48 w-full object-cover"
+                    className="h-full w-full object-cover"
                   />
                 </div>
               </div>
@@ -534,26 +536,40 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* subscribe */}
+        <section className="px-6 py-8 lg:px-16 lg:py-10">
+          <div className="bg-black rounded-3xl text-white shadow-2xl  p-6 lg:p-10 flex flex-col border ">
+            <div className="text-center">
+              <h1 className="lg:text-4xl font-semibold text-2xl">
+                <span className="block"> Subscribe Newsletter &</span>
+                <span className="block">Get Latest News</span>{" "}
+              </h1>
+            </div>
+            <div className="flex flex-row gap-5 justify-center items-center">
+              <div className="overflow-hidden rounded-2xl shadow-lg w-full lg:max-w-lg">
+                <img src={img9} alt="perfume and cosmetics" />
+              </div>
+              <div className="flex items-center gap-2">
+                <input
+                  type="email"
+                  name=""
+                  id=""
+                  placeholder="Enter your email"
+                  className="bg-gray-800 text-white placeholder:text-gray-500 border border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                />
+                <span className="cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-full flex items-center gap-2 transition-all">
+                  <ArrowRight />
+                </span>
+              </div>
+
+              <div className="overflow-hidden rounded-2xl shadow-lg w-full lg:max-w-lg">
+                <img src={img10} alt="perfume on a golden cloth" />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
 }
-
-//  <p className="text-gray-600 italic">
-//                       "{testimonial.quote}"
-//                     </p>
-//                     <div className="mt-4 flex items-center">
-//                       <img
-//                         src={testimonial.image}
-//                         alt={testimonial.name}
-//                         className="w-12 h-12 rounded-full object-cover"
-//                       />
-//                       <div className="ml-4">
-//                         <h3 className="font-bold text-gray-800">
-//                           {testimonial.name}
-//                         </h3>
-//                         <p className="text-sm text-gray-500">
-//                           {testimonial.role}
-//                         </p>
-//                       </div>
-//                     </div>
