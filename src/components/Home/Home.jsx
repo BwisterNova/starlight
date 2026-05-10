@@ -541,14 +541,18 @@ export default function Home() {
         <section className="px-6 py-8 lg:px-16 lg:py-10">
           <div className="bg-black rounded-3xl text-white shadow-2xl  p-6 lg:p-10 flex flex-col border ">
             <div className="text-center">
-              <h1 className="lg:text-4xl font-semibold text-2xl">
+              <h1 className="lg:text-5xl font-semibold text-3xl">
                 <span className="block"> Subscribe Newsletter &</span>
                 <span className="block">Get Latest News</span>{" "}
               </h1>
             </div>
             <div className="flex flex-row gap-5 justify-center items-center">
-              <div className="overflow-hidden rounded-2xl shadow-lg w-full lg:max-w-lg">
-                <img src={img9} alt="perfume and cosmetics" />
+              <div className="overflow-hidden rounded-2xl shadow-lg  lg:max-w-sm">
+                <img
+                  src={img9}
+                  alt="perfume and cosmetics"
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="flex items-center gap-2">
                 <input
@@ -556,15 +560,19 @@ export default function Home() {
                   name=""
                   id=""
                   placeholder="Enter your email"
-                  className="bg-gray-800 text-white placeholder:text-gray-500 border border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className=" placeholder:text-gray-500 border border-gray-300 p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition w-full lg:w-auto"
                 />
-                <span className="cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-full flex items-center gap-2 transition-all">
+                <span className="cursor-pointer bg-amber-500 hover:bg-amber-600 rounded-full text-white relative  p-2 rounded-full flex items-center gap-2 transition-all">
                   <ArrowRight />
                 </span>
               </div>
 
-              <div className="overflow-hidden rounded-2xl shadow-lg w-full lg:max-w-lg">
-                <img src={img10} alt="perfume on a golden cloth" />
+              <div className="overflow-hidden rounded-2xl shadow-lg w-full lg:max-w-sm">
+                <img
+                  src={img10}
+                  alt="perfume on a golden cloth"
+                  className="h-full w-full object-cover"
+                />
               </div>
             </div>
           </div>
