@@ -541,33 +541,32 @@ export default function Home() {
         <section className="px-6 py-8 lg:px-16 lg:py-10">
           <div className="bg-black rounded-3xl text-white shadow-2xl  p-6 lg:p-10 flex flex-col border ">
             <div className="text-center">
-              <h1 className="lg:text-5xl font-semibold text-3xl">
+              <h1 className="lg:text-6xl font-semibold text-4xl">
                 <span className="block"> Subscribe Newsletter &</span>
-                <span className="block">Get Latest News</span>{" "}
+                <span className="block text-amber-500">Get Latest News</span>{" "}
               </h1>
             </div>
-            <div className="flex flex-row gap-5 justify-center items-center">
-              <div className="overflow-hidden rounded-2xl shadow-lg  lg:max-w-sm">
+            <div className="flex flex-col lg:flex-row gap-5 justify-center items-center mt-8">
+              <div className="overflow-hidden rounded-2xl shadow-lg w-24 h-24 lg:w-32 lg:h-32">
                 <img
                   src={img9}
                   alt="perfume and cosmetics"
                   className="h-full w-full object-cover"
                 />
               </div>
-              <div className="flex items-center gap-2">
+              <div className="relative w-full max-w-md lg:max-w-lg">
                 <input
                   type="email"
                   name=""
                   id=""
                   placeholder="Enter your email"
-                  className=" placeholder:text-gray-500 border border-gray-300 p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition w-full lg:w-auto"
+                  className="placeholder:text-gray-500 border border-gray-300 p-3 pr-12 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition w-full"
                 />
-                <span className="cursor-pointer bg-amber-500 hover:bg-amber-600 rounded-full text-white relative  p-2 rounded-full flex items-center gap-2 transition-all">
-                  <ArrowRight />
-                </span>
+                <button className="absolute right-1 top-1 cursor-pointer bg-amber-500 hover:bg-amber-600 rounded-full text-white p-2 transition-all">
+                  <ArrowRight size={20} />
+                </button>
               </div>
-
-              <div className="overflow-hidden rounded-2xl shadow-lg w-full lg:max-w-sm">
+              <div className="overflow-hidden rounded-2xl shadow-lg w-24 h-24 lg:w-32 lg:h-32">
                 <img
                   src={img10}
                   alt="perfume on a golden cloth"
