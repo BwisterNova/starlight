@@ -137,8 +137,20 @@ export default function Home() {
                 <a href="/" className="transition hover:text-slate-100">
                   Home
                 </a>
-                <a href="#about" className="transition hover:text-slate-100">
+                <a href="#shop" className="transition hover:text-slate-100">
+                  Shop
+                </a>
+                <a href="#shop" className="transition hover:text-slate-100">
+                  Collection
+                </a>
+                <a href="#shop" className="transition hover:text-slate-100">
+                  Best sellers
+                </a>
+                <a href="#shop" className="transition hover:text-slate-100">
                   About
+                </a>
+                <a href="#shop" className="transition hover:text-slate-100">
+                  Contact
                 </a>
               </nav>
 
@@ -543,7 +555,9 @@ export default function Home() {
             <div className="text-center">
               <h1 className="lg:text-6xl font-semibold text-4xl">
                 <span className="block"> Subscribe Newsletter &</span>
-                <span className="block text-amber-500">Get Latest News</span>{" "}
+                <span className="block text-amber-500">
+                  Get Latest News
+                </span>{" "}
               </h1>
             </div>
             <div className="flex flex-col lg:flex-row gap-5 justify-center items-center mt-8">
